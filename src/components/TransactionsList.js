@@ -1,15 +1,8 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList (props){
-
-  let array = props.transactions.map(transactionObj => {
-    return <Transaction 
-            key={transactionObj.id} 
-            transaction={transactionObj} 
-          />
-  })
-
+function TransactionsList() {
+  
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -27,7 +20,7 @@ function TransactionsList (props){
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {array}
+        <Transaction></Transaction>
       </tbody>
     </table>
   );
