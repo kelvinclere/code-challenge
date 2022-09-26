@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Transaction(props) {
 
   let {date, description, category, amount} = props.transaction
