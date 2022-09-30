@@ -1,8 +1,13 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList() {
-  
+function TransactionsList({ transactionsListed, search}) {
+
+  const filtered = transactionsListed.filter((trans) => {
+    let result = trans.description.toLowerCase().includes(search)
+    return result;
+  })
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -20,10 +25,12 @@ function TransactionsList() {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        <Transaction/>
+        {filtered.map((trans) => (
+          <Transaction key={trans.id} trans={trans} />
+        ))}
       </tbody>
     </table>
   );
 }
 
-export default TransactionsList;
+export default TransactionsList

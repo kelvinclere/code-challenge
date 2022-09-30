@@ -1,16 +1,12 @@
 import React from "react";
 
-
-function Transaction(props) {
-
-  let {date, description, category, amount} = props.transaction
-
+function Transaction({ trans }) {
   return (
     <tr>
-      <td>{date}</td>
-      <td>{description}</td>
-      <td>{category}</td>
-      <td>{amount}</td>
+      <td>{trans.date}</td>
+      <td>{trans.description}</td>
+      <td>{trans.category}</td>
+      <td>{trans.amount}</td>
     </tr>
   );
 }
